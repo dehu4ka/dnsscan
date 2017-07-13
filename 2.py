@@ -7,7 +7,7 @@ from async_dns.resolver import ProxyResolver
 
 from file_functions import get_ips_list_from_file
 
-MAX_THREADS = 500
+MAX_THREADS = 10000
 
 async def is_resolver_working(test_ip):
     # loop = asyncio.get_event_loop()
@@ -42,7 +42,7 @@ if __name__ == '__main__':
         asyncio.ensure_future(is_resolver_working(ip))"""
 
     # ip_list[MAX_THREADS*i:MAX_THREADS*(i+1)]
-    chunks = [ip_list[MAX_THREADS*i:MAX_THREADS*(i+1)] for i in range(int(len(ip_list)/100) + 1)]
+    chunks = [ip_list[MAX_THREADS*i:MAX_THREADS*(i+1)] for i in range(int(len(ip_list)/MAX_THREADS) + 1)]
 
     work = list()
     counter = 0
