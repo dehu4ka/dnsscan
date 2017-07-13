@@ -1,2 +1,4 @@
 dnspython
 async_dns
+curio
+gevent
