@@ -2,3 +2,5 @@ dnspython
 async_dns
 curio
 gevent
+redis
+aioredis
