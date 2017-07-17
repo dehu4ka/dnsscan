@@ -10,6 +10,7 @@ ETH_P_IP = 0x0800  # Internet Protocol Packet
 
 
 def checksum(data):
+    return 0
     s = 0
     n = len(data) % 2
     for i in range(0, len(data) - n, 2):
@@ -260,10 +261,8 @@ def main():
         ip = ipobj.unpack(response)
         response = response[ip.ihl:]
         tcp = tcpobj.unpack(response)
-        print
-        "IP Header:", ip.list
-        print
-        "TCP Header:", tcp.list
+        print ("IP Header:", ip.list)
+        print("TCP Header:", tcp.list)
 
 
 if __name__ == "__main__":
