@@ -36,7 +36,7 @@ async def is_resolver_working(test_ip):
 
 if __name__ == '__main__':
     total_start_time = time.time()
-    ip_list = get_ips_list_from_file('1.out')
+    ip_list = get_ips_list_from_file('2.out')
 
     event_loop = asyncio.get_event_loop()
 
