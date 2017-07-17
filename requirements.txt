@@ -4,3 +4,6 @@ curio
 gevent
 redis
 aioredis
+scapy-python3
+ipython
+dill
